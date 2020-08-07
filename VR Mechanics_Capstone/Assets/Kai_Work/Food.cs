@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Food : MonoBehaviour, IChoppable
+public class VR_ChoppedFood : MonoBehaviour, IChoppable
 {
     public GameObject choppedFoodPrefab;
     public int chopInteger;
 
     public XRInteractionManager interactionManager;
 
-    IngredientInteraction ingredient;
+    VR_IngredientInteraction ingredient;
 
     //cutting values
     private bool enteredChop;
@@ -22,7 +22,7 @@ public class Food : MonoBehaviour, IChoppable
         //chopInteger = 2; //setting chop limit
         chopCounter = 0;
 
-        ingredient = GetComponent<IngredientInteraction>();
+        ingredient = GetComponent<VR_IngredientInteraction>();
     }
 
     // Update is called once per frame
