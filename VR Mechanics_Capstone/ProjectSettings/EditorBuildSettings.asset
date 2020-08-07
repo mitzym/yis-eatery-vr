@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Kai_Work/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Krys_Work/Scenes/Mechanics Trial_V3.unity
     guid: e63bf5545e1071f49922af2021d5372b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Kai_Work/Scenes/cutting_scenever2.unity
     guid: 6eafc3ecbe7dc5d42bb7a9e017ca73a7
   m_configObjects:
@@ -26,4 +26,6 @@ EditorBuildSettings:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: cda63c3e8820caa4284d895dfa795005,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: d61e049a4062e3b48882950e3f305552,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 9eb970947edefbe48977096515c811f0,
       type: 2}
