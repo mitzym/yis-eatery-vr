@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class VR_IngredientInteraction : MonoBehaviour
+public class IngredientInteraction : MonoBehaviour
 {
     //cutting board-relevant variables
     public Transform cuttingBoardAttachPoint;
