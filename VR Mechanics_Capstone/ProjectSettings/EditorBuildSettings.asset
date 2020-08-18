@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Kai_Work/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -17,9 +17,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Krys_Work/Scenes/Mechanics Trial_V3.unity
     guid: e63bf5545e1071f49922af2021d5372b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Kai_Work/Scenes/cutting_scenever2.unity
     guid: 6eafc3ecbe7dc5d42bb7a9e017ca73a7
+  - enabled: 0
+    path: Assets/VR UI Test/VR UI Test.unity
+    guid: b0de5798982ec5348b51d25fadf5539f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2efebc138e53e10409b13f6e9eb1f5b5,
       type: 2}
