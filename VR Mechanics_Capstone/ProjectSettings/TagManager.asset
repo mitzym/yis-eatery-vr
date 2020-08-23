@@ -4,16 +4,57 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Eat
-  - Trash
-  - Fluid
-  - Container
-  - Detect
-  - Hand
-  - Food
-  - CuttingBoard
-  - Knife
-  - ChoppedFood
+  - NetworkManager
+  - XiaoLi
+  - XiaoFan
+  - DaLi
+  - DaFan
+  - XiaoBen
+  - Plate
+  - DirtyPlate
+  - DropZone
+  - Ingredient
+  - ObjectIcon
+  - HeldIngredient
+  - HeldDirtyPlates
+  - Sink
+  - SinkZone
+  - CleanPlate
+  - StoreroomZone
+  - EggShelf
+  - ChickenShelf
+  - CucumberShelf
+  - RiceTub
+  - Rice
+  - Egg
+  - SinkPos
+  - Chicken
+  - Cucumber
+  - Floor
+  - DaFanCam
+  - DaLiCam
+  - XiaoLiCam
+  - AttachPoint
+  - ConnectButton
+  - ConnectToServerText
+  - NoButton
+  - TryAgainButton
+  - EggShelfZone
+  - ChickenShelfZone
+  - CucumberShelfZone
+  - ShelfZone
+  - RiceTubZone
+  - TrashBin
+  - TrashZone
+  - RottenIngredient
+  - Drink
+  - IngredientTrayZone
+  - DrinkFridge
+  - NoDropZone
+  - Dish
+  - Customer
+  - Table
+  - IngredientTableZone
   layers:
   - Default
   - TransparentFX
@@ -23,29 +64,29 @@ TagManager:
   - UI
   - 
   - 
-  - Grabbable
-  - Ungrabbable
-  - Sliceable
+  - Player
+  - Environment
+  - Zones
+  - PickedUp
+  - PlateOnSink
+  - UnInteractable
+  - IngredientShelf
+  - Ingredient
+  - TableItem
+  - Pickuppable
+  - Floor
+  - Queue
+  - Ordering
+  - DrinkMachine
+  - Drink
+  - RottenIngredient
+  - Table
+  - Dish
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - VR Rig Bounds
+  - VR Rig
+  - Hands
   - 
   m_SortingLayers:
   - name: Default
