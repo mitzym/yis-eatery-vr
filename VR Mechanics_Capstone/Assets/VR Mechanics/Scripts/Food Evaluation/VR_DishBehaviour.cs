@@ -6,7 +6,7 @@ public class VR_DishBehaviour : MonoBehaviour
 {
     public bool isDebug = false;
 
-    [SerializeField] private string PlateableTag = "plateable";
+    [SerializeField] private string PlateableTag = "Plateable";
 
     [SerializeField] private Collider dishBehaviourTrigger;
     [SerializeField] private VR_DishEvaluation DishEvaluationScript;
@@ -15,8 +15,16 @@ public class VR_DishBehaviour : MonoBehaviour
     [SerializeField] private GameObject ServeDishTrigger, PlateIngredientTrigger;
     private GameObject plateOccupiedBy;
 
+    private void Awake()
+    {
+        ToggleAllTriggers(true);
+        ToggleServingTrigger(false);
+        TogglePlatingTrigger(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("on trigger enter: " + other.gameObject.name);
         if (other.gameObject.CompareTag(PlateableTag) && plateOccupiedBy == null)
         {
             VR_OrderSlipBehaviour orderSlipBehaviour = other.gameObject.GetComponent<VR_OrderSlipBehaviour>();

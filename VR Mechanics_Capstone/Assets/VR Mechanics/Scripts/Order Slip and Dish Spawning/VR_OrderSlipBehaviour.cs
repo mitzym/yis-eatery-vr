@@ -6,11 +6,17 @@ using Random = UnityEngine.Random;
 
 public class VR_OrderSlipBehaviour : MonoBehaviour
 {
-    [SerializeField] private GameObject orderSlipParent; //parent of the order slip gameobj
+    [SerializeField] private GameObject orderSlipVisualsParent; //parent of the order slip gameobj
+    [SerializeField] private Collider orderSlipCollider;
     private ChickenRice orderSlipOrder;
+
     public ChickenRice OrderSlipOrder
     {
         get { return orderSlipOrder; }
+    }
+    public GameObject OrderSlipVisualsParent
+    {
+        get { return orderSlipVisualsParent; }
     }
 
     //Order slip icons to toggle
@@ -49,6 +55,15 @@ public class VR_OrderSlipBehaviour : MonoBehaviour
     */
     #endregion
 
+    public void ToggleColliderAndVisuals(bool enable, bool collider = true, bool visuals = true)
+    {
+        if (collider)
+            orderSlipCollider.enabled = enable;
+
+        if (visuals)
+            orderSlipVisualsParent.SetActive(enable);
+    }
+
 
     //assign an order to the order slip and customize its appearance. start aging the background color
     public void CustomizeOrderSlip(ChickenRice order)
@@ -58,10 +73,10 @@ public class VR_OrderSlipBehaviour : MonoBehaviour
         //enable all the relevant icons
         ToggleIcons(true);
 
-        orderSlipParent.SetActive(true);
+        //orderSlipParent.SetActive(true);
 
         //start aging the background
-        StartChangingBackgroundColor();
+        //StartChangingBackgroundColor();
     }
 
 
@@ -78,7 +93,7 @@ public class VR_OrderSlipBehaviour : MonoBehaviour
         fadeBackground = true;
 
         //disable the orderSlip
-        orderSlipParent.SetActive(false);
+        //orderSlipParent.SetActive(false);
 
         //disable all the relevant icons
         ToggleIcons(false);
@@ -90,7 +105,7 @@ public class VR_OrderSlipBehaviour : MonoBehaviour
     #region Methods to change appearance
     //---------------------------------------------------CHANGE THE COLOUR OF THE BACKGROUND OVER TIME----------------------------------------------
     //call the coroutine that changes the background color of the order slip as time passes
-    private void StartChangingBackgroundColor()
+    public void StartChangingBackgroundColor()
     {
         if (isBackgroundFading)
         {
@@ -102,7 +117,7 @@ public class VR_OrderSlipBehaviour : MonoBehaviour
         backgroundFadeCoroutine = StartCoroutine(ChangeBackgroundColor(freshColor, oldColor, secondsTakenToAge));
     }
 
-    private void StopChangingBackgroundColor()
+    public void StopChangingBackgroundColor()
     {
         if (!isBackgroundFading)
         {

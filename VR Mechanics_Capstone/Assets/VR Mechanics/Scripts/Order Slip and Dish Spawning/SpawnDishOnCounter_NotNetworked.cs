@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnDishOnCounter : MonoBehaviour
+public class SpawnDishOnCounter_NotNetworked : MonoBehaviour
 {
     #region Singleton
 
-    private static SpawnDishOnCounter _instance;
-    public static SpawnDishOnCounter Instance { get { return _instance; } }
+    private static SpawnDishOnCounter_NotNetworked _instance;
+    public static SpawnDishOnCounter_NotNetworked Instance { get { return _instance; } }
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class SpawnDishOnCounter : MonoBehaviour
     //Instantiates the order being served
     public void SpawnDish(int _indexNum, bool isRoasted, bool ricePlain, bool haveEgg)
     {
-        ChickenRice dishToBeSpawned = OrderGeneration.Instance.CreateCustomOrder(isRoasted, ricePlain, haveEgg);
+        ChickenRice dishToBeSpawned = OrderGeneration_NotNetworked.Instance.CreateCustomOrder(isRoasted, ricePlain, haveEgg);
 
         //instantiate a new dish on empty spot on the counter
         GameObject newDish = Instantiate(IdentifyOrder(dishToBeSpawned.ChickenRiceLabel), dishSpawnPoints[_indexNum].position, dishSpawnPoints[_indexNum].rotation);

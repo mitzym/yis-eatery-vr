@@ -23,9 +23,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/VR Mechanics/VR UI Test/VR UI Test.unity
     guid: b0de5798982ec5348b51d25fadf5539f
-  - enabled: 1
+  - enabled: 0
     path: Assets/VR Mechanics/Scenes/VR Kitchen.unity
     guid: 1177b6197b6af8942a00d0eaaa00f4a8
+  - enabled: 1
+    path: Assets/VR Mechanics/Scenes/VR Order Slip Test.unity
+    guid: 12f32b355ef9c8848955c37446c5f904
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2efebc138e53e10409b13f6e9eb1f5b5,
       type: 2}

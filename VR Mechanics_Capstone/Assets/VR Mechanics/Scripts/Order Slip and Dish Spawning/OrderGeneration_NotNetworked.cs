@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrderGeneration : MonoBehaviour
+public class OrderGeneration_NotNetworked : MonoBehaviour
 {
     #region Singleton
 
-    private static OrderGeneration _instance;
-    public static OrderGeneration Instance { get { return _instance; } }
+    private static OrderGeneration_NotNetworked _instance;
+    public static OrderGeneration_NotNetworked Instance { get { return _instance; } }
 
     private void Awake()
     {

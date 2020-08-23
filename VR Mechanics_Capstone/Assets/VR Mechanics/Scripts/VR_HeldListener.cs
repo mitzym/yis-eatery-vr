@@ -10,6 +10,7 @@ public class VR_HeldListener : XRBaseInteractable
 
     public void ToggleBeingHeld(bool enable)
     {
+        Debug.Log("toggle being held: " + enable);
         _beingHeld = enable;
     }
 
@@ -47,6 +48,8 @@ public class VR_HeldListener : XRBaseInteractable
         {
             objBeingHeldScript.SetObjectBeingHeld(null);
         }
+
+        ToggleBeingHeld(false);
     }
 
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrderScript : MonoBehaviour
+public class OrderScript_NotNetworked : MonoBehaviour
 {
     [SerializeField] private ChickenRice.PossibleChickenRiceLabel dishLabel;
     [SerializeField] private GameObject orderIcon;

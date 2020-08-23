@@ -38,7 +38,7 @@ public class VR_DishEvaluation : MonoBehaviour
 
     private void AssignDishDetails()
     {
-        correspondingDishDetails = OrderGeneration.Instance.CreateCustomOrder(roastedChic, ricePlain, haveEgg);
+        correspondingDishDetails = OrderGeneration_NotNetworked.Instance.CreateCustomOrder(roastedChic, ricePlain, haveEgg);
     }
 
     private bool CheckMinRequirements()

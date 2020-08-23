@@ -34,7 +34,7 @@ public class VR_OrderSlipManager : MonoBehaviour
         //ensure that all the order slips are empty
         foreach (GameObject orderSlip in orderSlips)
         {
-            orderSlip.SetActive(false);
+            orderSlip.GetComponent<VR_OrderSlipBehaviour>().ToggleColliderAndVisuals(false, false);
         }
 
         //hide the hidden order count game obj
@@ -47,11 +47,19 @@ public class VR_OrderSlipManager : MonoBehaviour
         }
     }
 
-
+    public void SendOrderToOrderManager()
+    {
+        VR_OrderManagement.Instance.AddOrderToList(Random.value > 0.5f, Random.value > 0.5f, Random.value > 0.5f);
+    }
 
     private void Update()
     {
-        if(VR_OrderManagement.Instance.NewOrders.Count > 0 && !isUpdatingLists)
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SendOrderToOrderManager();
+        }
+
+        if (VR_OrderManagement.Instance.NewOrders.Count > 0 && !isUpdatingLists)
         {
             isUpdatingLists = true;
 
@@ -69,6 +77,11 @@ public class VR_OrderSlipManager : MonoBehaviour
             ordersToRemove.Clear();
 
             isUpdatingLists = false;
+        }
+
+        if (!runOnce)
+        {
+            RunOnce();
         }
     }
 
@@ -88,7 +101,9 @@ public class VR_OrderSlipManager : MonoBehaviour
             emptyOrderSlip.GetComponent<VR_OrderSlipBehaviour>().CustomizeOrderSlip(_chickenRiceOrder);
 
             //make the order slip visible
-            //emptyOrderSlip.SetActive(true);
+            emptyOrderSlip.GetComponent<VR_OrderSlipBehaviour>().ToggleColliderAndVisuals(true);
+
+            emptyOrderSlip.GetComponent<VR_OrderSlipBehaviour>().StartChangingBackgroundColor();
         }
         else
         {
@@ -103,13 +118,27 @@ public class VR_OrderSlipManager : MonoBehaviour
     {
         foreach(GameObject orderSlip in orderSlips)
         {
-            if (!orderSlip.activeInHierarchy)
+            if (!orderSlip.GetComponent<Collider>().enabled || !orderSlip.GetComponent<VR_OrderSlipBehaviour>().OrderSlipVisualsParent.activeInHierarchy)
             {
                 return orderSlip;
             }
         }
 
         return null;
+    }
+
+    private bool runOnce = false;
+    private void RunOnce()
+    {
+        foreach (GameObject orderSlip in orderSlips)
+        {
+            if (!orderSlip.GetComponent<VR_OrderSlipBehaviour>().OrderSlipVisualsParent.activeInHierarchy)
+            {
+                orderSlip.GetComponent<VR_OrderSlipBehaviour>().ToggleColliderAndVisuals(false);
+            }
+        }
+
+        runOnce = true;
     }
 
 
@@ -146,6 +175,9 @@ public class VR_OrderSlipManager : MonoBehaviour
 
         //remove the order from the order slip list
         currentlyDisplayedOrders.Remove(orderSlip.OrderSlipOrder);
+
+        orderSlip.StopChangingBackgroundColor();
+        orderSlip.ToggleColliderAndVisuals(false);
         orderSlip.ResetOrderSlip();
 
         //display a hidden order (if any)

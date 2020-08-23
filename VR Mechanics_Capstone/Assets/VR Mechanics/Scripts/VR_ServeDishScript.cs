@@ -5,7 +5,7 @@ using UnityEngine;
 public class VR_ServeDishScript : MonoBehaviour
 {
 
-    [SerializeField] private string PlateableTag = "plateable";
+    [SerializeField] private string PlateableTag = "Plateable";
 
     [SerializeField] private VR_DishEvaluation DishEvaluationScript;
     [SerializeField] private VR_DishBehaviour DishBehaviourScript;
@@ -26,7 +26,7 @@ public class VR_ServeDishScript : MonoBehaviour
                 // if there is space on the counter, remove the order slip and spawn the dish
                 if (indexNum > -1)
                 {
-                    SpawnDishOnCounter.Instance.SpawnDish(indexNum, orderSlipBehaviour.OrderSlipOrder.RoastedChic, orderSlipBehaviour.OrderSlipOrder.RicePlain, orderSlipBehaviour.OrderSlipOrder.HaveEgg);
+                    SpawnDishOnCounter_NotNetworked.Instance.SpawnDish(indexNum, orderSlipBehaviour.OrderSlipOrder.RoastedChic, orderSlipBehaviour.OrderSlipOrder.RicePlain, orderSlipBehaviour.OrderSlipOrder.HaveEgg);
 
                     OrderSlipManagerScript.RemoveOrderSlip(orderSlipBehaviour);
 
@@ -48,7 +48,7 @@ public class VR_ServeDishScript : MonoBehaviour
 
     private bool CheckCounterHasSpace()
     {
-        indexNum = SpawnDishOnCounter.Instance.CheckCounterHasSpace(); //returns -1 if there is no space
+        indexNum = SpawnDishOnCounter_NotNetworked.Instance.CheckCounterHasSpace(); //returns -1 if there is no space
 
         return indexNum > -1;
     }

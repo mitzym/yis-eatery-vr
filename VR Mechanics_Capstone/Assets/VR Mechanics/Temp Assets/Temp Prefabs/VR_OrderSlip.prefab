@@ -156,6 +156,38 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1351612582180971887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912388138115834964}
+  m_Layer: 0
+  m_Name: Order Slip Visuals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1912388138115834964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351612582180971887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6354663550211256631}
+  - {fileID: 6354663550221595190}
+  m_Father: {fileID: 6354663551087123186}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935527019797889113
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,12 +1011,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6354663550211256630}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.032462493, y: 0.032462493, z: 0.032462493}
   m_Children: []
-  m_Father: {fileID: 6354663551087123186}
-  m_RootOrder: 1
+  m_Father: {fileID: 1912388138115834964}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &6354663550211256628
 SpriteRenderer:
@@ -1062,7 +1094,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6354663550221595185}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.00025214162, y: 0.00025214162, z: 0.00025214162}
   m_Children:
@@ -1071,8 +1103,8 @@ RectTransform:
   - {fileID: 6354663549989180986}
   - {fileID: 6354663549932736370}
   - {fileID: 6354663550572294037}
-  m_Father: {fileID: 6354663551087123186}
-  m_RootOrder: 2
+  m_Father: {fileID: 1912388138115834964}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1379,7 +1411,7 @@ GameObject:
   - component: {fileID: 7839519210164909171}
   m_Layer: 0
   m_Name: VR_OrderSlip
-  m_TagString: Untagged
+  m_TagString: Plateable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1396,8 +1428,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7663402782722218107}
-  - {fileID: 6354663550211256631}
-  - {fileID: 6354663550221595190}
+  - {fileID: 1912388138115834964}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -1413,7 +1444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0dc15a6e813fbb41ad87e8cace7501a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderSlipParent: {fileID: 6354663551087123196}
+  orderSlipVisualsParent: {fileID: 1351612582180971887}
+  orderSlipCollider: {fileID: 6354663551087123197}
   isChicRoasted:
   - {fileID: 6354663550389657039}
   - {fileID: 6354663550968461314}
@@ -1537,6 +1569,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08a0f5f1bdc59748ba2b6dfb212471e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 0}
 --- !u!65 &6354663551087123197
 BoxCollider:
   m_ObjectHideFlags: 0

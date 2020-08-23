@@ -25,16 +25,6 @@ public class VR_OrderManagement : MonoBehaviour
     }
     #endregion
 
-    #region Debug Shortcuts
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            AddOrderToList(Random.value > 0.5f, Random.value > 0.5f, Random.value > 0.5f);
-        }
-    }
-    #endregion
-
     private List<ChickenRice> newOrders = new List<ChickenRice>();
     public List<ChickenRice> NewOrders
     {
@@ -44,7 +34,7 @@ public class VR_OrderManagement : MonoBehaviour
 
     public void AddOrderToList(bool roastedChic, bool ricePlain, bool haveEgg)
     {
-        ChickenRice tempOrderHolder = OrderGeneration.Instance.CreateCustomOrder(roastedChic, ricePlain, haveEgg);
+        ChickenRice tempOrderHolder = OrderGeneration_NotNetworked.Instance.CreateCustomOrder(roastedChic, ricePlain, haveEgg);
 
         newOrders.Add(tempOrderHolder);
     }
